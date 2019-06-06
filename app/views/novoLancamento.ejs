@@ -2,9 +2,24 @@
 <html>
 <head>
 	<title>Projeto jogar dados</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
 <main>
+
+	<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
+		
+		<div class="container">
+
+		<div class="card-deck my-2">
+
+		<div class="col-6 p-2">
+
+		<div class="card">
+
+		<div class="card-header">Pontos Acumulados</div>
+		<div class="card-boy"><%= pontosAcumulados %></div>	
 	
 	<h1>Projeto jogar dados</h1>
 
@@ -18,24 +33,47 @@
 
 	<p>Pontuação Lançamento <%= pontosLancamento %></p>
 
-	<button type="button" id="buttonlancarDados">
-	Lancar Dados</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="btn btn-success" type="button" id="buttonLancarDados">Lançar Dados</button>
+
+<button class="btn btn-success" type="button" id="buttonReiniciarJogo">Reiniciar Jogo</button>
+
+<button class="btn btn-success" type="button" id="buttonEncerrarJogo">Encerrar Jogo</button>
 
 </main>
 </body>
 
-<script type="js/jquery-3.4.0.min.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
 
 <script type="text/javascript">
+ 
+$(document).ready(function(){
 
-	$(document).ready(function(){
 
 		$('#buttonlancarDados').click(
 			function(){
-				location.href='lancarDados'
-				;
+				location.href='lancarDados';
 			});
-	 });
+
+		$('#buttonReiniciarJogo').click(
+			function(){
+				location.href='reiniciar';
+			});
+
+		$('#buttonEncerrarJogo').click(
+			function(){
+				location.href='encerrar';
+			});
+
+});
 
 </script>
+
 </html>

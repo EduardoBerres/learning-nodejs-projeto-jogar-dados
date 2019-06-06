@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title><h1>Projeto Jogar Dados</h1></title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
 </head>
 <body>
 
 	<main>
-		
-<h1>Projeto Jogar Dados</h1>
 
-	<button type="button" id="buttonLancarDados">LançarDados</button>
+		<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
+
+		<h1>Projeto Jogar Dados</h1>
+
+		<p>clique no botão abaixo para lançar os dados</p>
+
+		<button class="btn btn-success" type="button" id="buttonLancarDados">Lançar Dados</button>
+
+		</div>
+		
 	</main>
 
 </body>
@@ -17,13 +27,13 @@
 <script src="js/jquery-3.4.1.min.js"></script>
 
 <script type="text/javascript">
-
  
- $(document).ready(function(){
+$(document).ready(function(){
 
  	$('#buttonLancarDados').click(function(){
  		location.href = 'lancarDados';
  	});
 });
+
 </script>
 </html>
