@@ -8,46 +8,74 @@
 <body>
 <main>
 
-	<div class="container col-12 col-sm-8 col-md-6 bg-light p-2 text-center">
+	<div class="container col-12 col-sm-8 col-md-6 p-2 text-center"><h1>Projeto jogar dados</h1>
 		
 		<div class="container">
 
-		<div class="card-deck my-2">
+			<div class="card-deck my-2">
 
-		<div class="col-6 p-2">
+				<div class="col-6 p-2">
 
-		<div class="card">
+					<div class="card">
 
-		<div class="card-header">Pontos Acumulados</div>
-		<div class="card-boy"><%= pontosAcumulados %></div>	
+						<div class="card-header">Pontos Acumulados</div>
+						<div class="card-boy"><%= pontosAcumulados %></div>	
+					</div>
+				</div>
+				<div class="col-12 p-2">
+					<div class="card">
+						<div class="card-header">Número de Lançamentos</div>
+						<div class='card-boy'><%= nLancamentos %></div>
+					</div>
+
+			</div>
+			<div class="col-6 p-2">
+					<div class="card">
+						<div class="card-header">Lançamento</div>
+						<div class='card-boy'>
+
+							<% for (var i=0; i < lancamento.length; i++) { %>
+							<img src="images/dado<%= lancamento[i]%>.png"
+							class="p-2 col-3 col-sm-2">
+				<%	} %> 
+			</div>
+					</div>
+
+			</div>
+			<div class="col-6 p-2">
+					<div class="card">
+						<div class="card-header">Jogo Lançamento</div>
+						<div class='card-boy'><%= jogoLancamento %></div>
+					</div>
+
+			</div>
+			<div class="col-6 p-2">
+					<div class="card">
+						<div class="card-header">Pontuação Lançamento</div>
+						<div class='card-boy'><%= pontosLancamento %></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
 	
-	<h1>Projeto jogar dados</h1>
 
-	<p>Pontuação acumulada: <%= pontosAcumulados %></p>
 
-	<p>Número de Lançamentos <%= nLancamentos %></p>
 
-	<p>Lançamento: <%= lancamento %></p>
+<div class="col-12 mx-auto mt-2 px-4">	
+	<button type="button" class="btn btn-success" id="buttonLancarDados">Lancar Dados</button>
+	
+	<button class="btn btn-warning" type="button" id="buttonReiniciarJogo">Reiniciar</button>
 
-	<p>Jogo Lançamento: <%= jogoLancamento %></p>
-
-	<p>Pontuação Lançamento <%= pontosLancamento %></p>
+	<button class="btn btn-danger" type="button" id="buttonEncerrarJogo">Encerrar</button>
 
 </div>
 
-</div>
+	</div>
 
-</div>
-
-</div>
-
-<button class="btn btn-success" type="button" id="buttonLancarDados">Lançar Dados</button>
-
-<button class="btn btn-success" type="button" id="buttonReiniciarJogo">Reiniciar Jogo</button>
-
-<button class="btn btn-success" type="button" id="buttonEncerrarJogo">Encerrar Jogo</button>
 
 </main>
+
 </body>
 
 <script src="js/jquery-3.4.1.min.js"></script>
@@ -57,7 +85,7 @@
 $(document).ready(function(){
 
 
-		$('#buttonlancarDados').click(
+		$('#buttonLancarDados').click(
 			function(){
 				location.href='lancarDados';
 			});
