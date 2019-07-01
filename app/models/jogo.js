@@ -1,10 +1,11 @@
 function Jogo(dados = 5, lados = 6)
- {
+{
 	console.log('model: executar constructor de jogo');
 	this.dados = dados;
 	this.lados = lados;
 	this.pontos = 0;
 	this.n = 0;
+	this.contador = {Generala:0,Poker:0,Full:0}
 }
 
 Jogo.prototype.novoJogo = function() {
@@ -49,39 +50,48 @@ Jogo.prototype.analisarLancamento = function(lancamento){
 
 	var resultado;
 
-	if ( contagem.find(e => e === 5) )
+	if (contagem.find(e => e === 5) ){
 		resultado = GENERALA;
-	else if ( contagem.find(e => e === 4))
+		this.contador.Generala +=1;
+	}
+	else if (contagem.find(e => e === 4)){
 		resultado = POKER;
-	else if ( contagem.find(e => e === 3) && contagem.find(e => e  === 2) )
+		this.contador.Poker +=1;
+	}
+
+	else if (contagem.find(e => e === 3) && contagem.find(e => e  === 2) ){
 		resultado = FULL;
+		this.contador.Full +=1;
+	}
 	else 
 		resultado = NADA;
 
-return resultado;
+	return resultado;
 
 }
 
 Jogo.prototype.novoLancamento = function(){
-console.log('model: novoLancamento');
-var lancamento = this.lancarDados();
-console.log('model: analiseLancamento');
-var analiseLancamento = this.analisarLancamento(lancamento);
-this.pontos += analiseLancamento.pontos;
-this.n += 1;
-console.log('model: prepara resultado'); 
+	console.log('model: novoLancamento');
+	var lancamento = this.lancarDados();
+	console.log('model: analiseLancamento');
+	var analiseLancamento = this.analisarLancamento(lancamento);
+	this.pontos += analiseLancamento.pontos;
+	this.n += 1;
 
-var resultado = {
+	console.log('model: prepara resultado'); 
 
-pontosAcumulados : this.pontos,
-novoLancamentos : this.n,
-nLancamentos : this.n,
-lancamento : lancamento,
-jogoLancamento : analiseLancamento.jogo,
-pontosLancamento : analiseLancamento.pontos
-};
+	var resultado = {
 
-return resultado;
+		pontosAcumulados : this.pontos,
+		novoLancamentos : this.n,
+		nLancamentos : this.n,
+		contador : this.contador,
+		lancamento : lancamento,
+		jogoLancamento : analiseLancamento.jogo,
+		pontosLancamento : analiseLancamento.pontos
+	};
+
+	return resultado;
 
 }
 

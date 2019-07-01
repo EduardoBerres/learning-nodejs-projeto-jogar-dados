@@ -16,8 +16,7 @@ module.exports.novoLancamento = function(application, req, res){
 		var resultado = jogoModel.novoLancamento();
 		res.render('novoLancamento', resultado );
 
-	}
-
+}
 	}
 
 	module.exports.reiniciar = function(application, req, res){
@@ -27,6 +26,7 @@ module.exports.novoLancamento = function(application, req, res){
 		jogoModel.novoJogo();
 		console.log('controller: atualizar a view');
 		res.render('novoJogo');
+		
 } else {
 	console.log('controller: atualizar a view patra a página principal');
 	res.render('home');
