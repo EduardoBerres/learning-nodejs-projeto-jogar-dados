@@ -1,0 +1,3 @@
+﻿Implemento -
+
+Meu implemento corresponde a uma funcionalidade que trabalha em um formato de contador, a cada acerto seja ele Generala, Full ou Poker haverá uma contagem sendo efetuada, basicamente ele apresentará ao usuário um meio de recordar a quantidade de vezes que o mesmo obteve uma determinada sequência de jogo.

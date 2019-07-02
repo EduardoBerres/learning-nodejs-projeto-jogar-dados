@@ -12,6 +12,7 @@ Jogo.prototype.novoJogo = function() {
 	console.log('model: novoJogo');
 	this.pontos = 0;
 	this.n = 0;
+	this.contador = {Generala:0,Poker:0,Full:0};
 }
 
 Jogo.prototype.lancarUmDado = function(){
